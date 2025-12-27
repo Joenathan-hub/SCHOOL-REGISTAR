@@ -1,0 +1,169 @@
+:root {
+    --dark-bg: #020617;
+    --light-bg: #f8fafc;
+    --dark-accent: #38bdf8;
+    --light-accent: #020617;
+    --text-dark: #ffffff;
+    --text-light: #020617;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body.dark {
+    background: var(--dark-bg);
+    color: var(--text-dark);
+}
+
+body.light {
+    background: var(--light-bg);
+    color: var(--text-light);
+}
+
+/* Login */
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 12px;
+    width: 300px;
+    text-align: center;
+    animation: fadeIn 1s;
+}
+
+.login-box input, .login-box select {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    padding: 20px;
+    background: rgba(0,0,0,0.2);
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.nav-links li {
+    list-style: none;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+body.dark .nav-links li:hover {
+    background: var(--dark-accent);
+    color: #020617;
+    transform: translateX(10px);
+}
+
+body.light .nav-links li:hover {
+    background: var(--light-accent);
+    color: white;
+    transform: translateX(10px);
+}
+
+.nav-links .active {
+    font-weight: bold;
+}
+
+/* Main */
+.main-content {
+    flex: 1;
+    padding: 25px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.toggle-btn {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Pages */
+.page {
+    display: none;
+    animation: slideUp 0.5s ease;
+}
+
+.active-page {
+    display: block;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 20px;
+}
+
+.card {
+    padding: 25px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.05);
+    transition: transform 0.4s;
+}
+
+.card span {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.card:hover {
+    transform: scale(1.08);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity:0; transform: scale(0.9);}
+    to {opacity:1; transform: scale(1);}
+}
+
+@keyframes slideUp {
+    from {opacity:0; transform: translateY(30px);}
+    to {opacity:1; transform: translateY(0);}
+}
